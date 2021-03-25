@@ -14,7 +14,7 @@ const ListadoDeNombres = () => {
   const guardaDate = (e) => {
     e.preventDefault()
     const nuevoRegistro = {
-      id: idRegistro,
+      id: id,
       concepto: concepto,
       monto: monto,
       fecha: fecha,

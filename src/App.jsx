@@ -1,6 +1,11 @@
 
-import ListadoDeNombres from "./components/ListadoDeNombres";
-import {useEffect, useState} from 'rea-----------ct'
+import {useEffect, useState} from 'react'
+import Home from "./components/Home";
+import FormReg from "./components/FormReg";
+import ListForm from './components/ListForm';
+import Balance from './components/Balance';
+
+
 
 function App() {
 
@@ -19,7 +24,17 @@ function App() {
 
   return (
     <div className="container">
-      <ListadoDeNombres></ListadoDeNombres>
+      
+      <h1>Este es el Home</h1>
+      
+      <Balance></Balance>
+      
+      <FormReg></FormReg>
+      
+      <ListForm></ListForm>
+      
+      
+      
      
     
     </div>
