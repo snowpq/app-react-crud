@@ -1,6 +1,6 @@
 const FormReg = () => {
     return ( 
-        <>
+        <div>
 
             <h1 style={{textAlign: 'center'}} className ='bg-dark text-warning' >Formulario de Registro</h1>
 
@@ -41,7 +41,7 @@ const FormReg = () => {
               
               <label className="ml-1 p-3"> Tipo </label>
 
-              <select class="form-select" >
+              <select className="form-select" >
                 <option selected></option>
                 <option value="Ingreso">Ingreso</option>
                 <option value="Egreso">Egreso</option>
@@ -50,12 +50,14 @@ const FormReg = () => {
 
 
             <input
+              
               type="submit"
               value="Registro de operacion"
               className="btn btn-info btn-block" />
           </form>
 
-        </>
+
+        </div>
 
      );
 }

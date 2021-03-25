@@ -1,6 +1,6 @@
 import {Fragment} from 'react'
 
-const ListForm = () => {
+const ListForm = ({registro}) => {
     return (  
         <Fragment>
             
@@ -10,27 +10,35 @@ const ListForm = () => {
             <thead>
               <tr>
                 
+                <th>ID</th>
                 <th>Concepto</th>
                 <th>Monto</th>
                 <th>Fecha</th>
-                <th>Tipo</th>
+                
 
               </tr>
             </thead>
 
             <tbody>
+                {registro.map( registro => (
 
-                <tr key ="">
-                <td>concepto</td>
-                  <td>monto</td>
-                  <td>fecha</td>
-                  <td>tipoE</td>
-                  <td className="center">
-                    <button className="btn btn-warning ">Edit</button>
+                <tr key={registro.idRegistro}>
+                                
+                                <td>{registro.idRegistro}</td>
+                                <td>{registro.Concepto}</td>
+                                <td>{registro.Monto}</td>
+                                <td>{registro.Fecha}</td>
+                                
+                                <td className="center">
+                                    <button className="btn btn-warning ">Edit</button>
 
-                    <button className="btn btn-danger ">Delete</button>
-                  </td>
+                                    <button className="btn btn-danger ">Delete</button>
+                                </td>
                 </tr>
+                    
+                ))}
+
+                
 
             </tbody>
           </table>
@@ -44,10 +52,11 @@ const ListForm = () => {
             <thead>
               <tr>
                 
+                <th>ID</th>
                 <th>Concepto</th>
                 <th>Monto</th>
                 <th>Fecha</th>
-                <th>Tipo</th>
+                
 
               </tr>
             </thead>

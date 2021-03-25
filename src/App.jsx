@@ -2,18 +2,18 @@
 import {useEffect, useState} from 'react'
 import FormReg from "./components/FormReg";
 import ListForm from './components/ListForm';
-import Balance from './components/Balance';
+//import Balance from './components/Balance';
 
 
 
 function App() {
 
-  const [registros, setregistros] = useState([])
+  const [registro, setregistros] = useState([])
 
   useEffect(() => {
     
     const getReg = () => {
-      fetch('http://localhost:3000/api')
+      fetch('http://localhost:9000/api')
       .then(res => res.json())
       .then(res => setregistros(res))
     }
@@ -31,7 +31,7 @@ function App() {
      
       <FormReg></FormReg>
       
-      <ListForm></ListForm>
+      <ListForm registro={registro}></ListForm>
       
       
       
