@@ -4,9 +4,9 @@ const ListForm = () => {
     return (  
         <Fragment>
             
-            
-            <h1>Ingresos</h1>
-            <table className="table">
+            <div className='container'>
+            <h1 style={{textAlign: 'center'}} className ='bg-success' >Ingresos</h1>
+            <table className="table table-success table-striped">
             <thead>
               <tr>
                 
@@ -35,8 +35,12 @@ const ListForm = () => {
             </tbody>
           </table>
 
-          <h1>Egresos</h1>
-            <table className="table">
+          <div className='container'>
+
+          </div>
+
+          <h1 style={{textAlign: 'center'}} className ='bg-danger' >Egresos</h1>
+            <table className="table table-danger table-striped">
             <thead>
               <tr>
                 
@@ -64,6 +68,8 @@ const ListForm = () => {
 
             </tbody>
           </table>
+
+          </div>
         </Fragment>
         
 

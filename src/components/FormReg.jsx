@@ -2,7 +2,7 @@ const FormReg = () => {
     return ( 
         <>
 
-            <h1>Formulario de Registro</h1>
+            <h1 style={{textAlign: 'center'}} className ='bg-dark text-warning' >Formulario de Registro</h1>
 
           <form className="form-group">
             <div>

@@ -4,7 +4,7 @@ const Balance = () => {
     return (  
         <> 
 
-        <h1>Blance actual</h1>
+        <h1 style={{textAlign: 'center'}} >Blance actual</h1>
         
         
         </>

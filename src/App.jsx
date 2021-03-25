@@ -1,6 +1,5 @@
 
 import {useEffect, useState} from 'react'
-import Home from "./components/Home";
 import FormReg from "./components/FormReg";
 import ListForm from './components/ListForm';
 import Balance from './components/Balance';
@@ -25,10 +24,11 @@ function App() {
   return (
     <div className="container">
       
-      <h1>Este es el Home</h1>
+      {/* <h1 style={{textAlign: 'center'}}>Este es el Home</h1>
       
       <Balance></Balance>
-      
+       */}
+     
       <FormReg></FormReg>
       
       <ListForm></ListForm>
