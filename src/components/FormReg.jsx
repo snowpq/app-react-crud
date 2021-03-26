@@ -31,7 +31,7 @@ const FormReg = ({reg, setreg}) => {
             body: JSON.stringify(reg)
         }
         fetch('http://localhost:9000/api', requestInit)
-            .then(res => res.json())
+            .then(res => res.text())
             .then(res => console.log(res))
 
 
@@ -62,6 +62,7 @@ const FormReg = ({reg, setreg}) => {
 
               <label htmlFor='Concepto' className='form-label'> Concepto </label>
               <input
+                value={Concepto}
                 name='Concepto'
                 id='Concepto'
                 type="text"
@@ -75,6 +76,7 @@ const FormReg = ({reg, setreg}) => {
 
               <label  htmlFor='Monto' className='form-label'> Monto </label>
               <input
+                value={Monto}
                 name='Monto'
                 id='Monto'
                 type="text"
@@ -87,6 +89,7 @@ const FormReg = ({reg, setreg}) => {
             <div className='mb-3'>
               <label htmlFor='Fecha' className='form-label'> Fecha </label>
               <input
+                value={Fecha}
                 name='Fecha'
                 id='Fecha'
                 type="date"
@@ -100,6 +103,7 @@ const FormReg = ({reg, setreg}) => {
 
             <label  htmlFor='Tipo' className='form-label'> Tipo </label>
                     <input
+                    value={Tipo}
                     name='Tipo'
                     id='Tipo'
                     type="text"
