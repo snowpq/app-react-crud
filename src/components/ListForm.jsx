@@ -1,10 +1,33 @@
 import { Fragment } from 'react'
 
-const ListForm = ({ registro, setlistUpdated }) => {
+const ListForm = ({ reg, registro, setlistUpdated }) => {
+
+
+    const handleSelect = id => {
+
+        //Desarrollar funcion para que pinte los datos del registro en el formulario
+        
+    }
 
 
 
-const handDelete= id =>{
+    const handleUpdate = id => {
+
+    const requestInit = {
+        method:'put',
+        headers:{'Content-Type': 'application/json'},
+        body: JSON.stringify(reg)
+        
+    } 
+    fetch('http://localhost:9000/api/'+ id, requestInit)
+        .then(res => res.text())
+        .then(res => console.log(res))
+
+        setlistUpdated(true)
+
+}
+
+const handleDelete= id =>{
 
     const requestInit = {
         method:'delete',
@@ -45,13 +68,20 @@ const handDelete= id =>{
 
                                 <td>{registro.idRegistro}</td>
                                 <td>{registro.Concepto}</td>
-                                <td>{registro.Tipo}</td>
+                                <td>{registro.Monto}</td>
                                 <td>{registro.Fecha}</td>
 
-                                <td className="center">
-                                    <button className="btn btn-warning ">Edit</button>
-                                    <button onClick={()=> handDelete(registro.idRegistro)} className="btn btn-danger ">Delete</button>
+                                
+                                <td>
+                                    <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+                                    
+                                    <button onClick={()=> handleSelect(registro.idRegistro)} type="button" className="btn btn-success">Select</button>
+                                    <button onClick={()=> handleUpdate(registro.idRegistro)} type="button" className="btn btn-warning">Update</button>
+                                    <button onClick={()=> handleDelete(registro.idRegistro)} type="button" className="btn btn-danger">Delete</button>
+                                    
+                                    </div>
                                 </td>
+                                
 
                             </tr>
 
@@ -91,7 +121,7 @@ const handDelete= id =>{
 
                                 <td>{registro.idRegistro}</td>
                                 <td>{registro.Concepto}</td>
-                                <td>{registro.Tipo}</td>
+                                <td>{registro.Monto}</td>
                                 <td>{registro.Fecha}</td>
 
                                 <td className="center">

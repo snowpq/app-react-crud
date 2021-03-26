@@ -45,7 +45,7 @@ function App() {
 
       <FormReg reg={reg} setreg={setreg}></FormReg>
 
-      <ListForm registro={registro} setlistUpdated={setlistUpdated}></ListForm>
+      <ListForm registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListForm>
 
 
 
