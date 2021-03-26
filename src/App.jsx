@@ -8,6 +8,14 @@ import ListForm from './components/ListForm';
 
 function App() {
 
+  const [reg, setreg] = useState({
+    
+    Concepto: '',      
+    Monto: 0,
+    Fecha:'',
+    Tipo:''
+  })
+
   const [registro, setregistros] = useState([])
 
   useEffect(() => {
@@ -29,7 +37,7 @@ function App() {
       <Balance></Balance>
        */}
      
-      <FormReg></FormReg>
+      <FormReg reg={reg} setreg={setreg}></FormReg>
       
       <ListForm registro={registro}></ListForm>
       

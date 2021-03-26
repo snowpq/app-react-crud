@@ -41,6 +41,8 @@ const ListForm = ({registro}) => {
                 
 
             </tbody>
+         
+         
           </table>
 
           <div className='container'>
@@ -63,17 +65,23 @@ const ListForm = ({registro}) => {
 
             <tbody>
               
-                <tr key = "">
-                  <td>concepto</td>
-                  <td>monto</td>
-                  <td>fecha</td>
-                  <td>tipoE</td>
-                  <td className="center">
+            {registro.map( registro => (
+
+<tr key={registro.idRegistro}>
+                
+                <td>{registro.idRegistro}</td>
+                <td>{registro.Concepto}</td>
+                <td>{registro.Monto}</td>
+                <td>{registro.Fecha}</td>
+                
+                <td className="center">
                     <button className="btn btn-warning ">Edit</button>
 
                     <button className="btn btn-danger ">Delete</button>
-                  </td>
-                </tr>        
+                </td>
+</tr>
+    
+))}   
 
             </tbody>
           </table>

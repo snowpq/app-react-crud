@@ -1,59 +1,119 @@
-const FormReg = () => {
+
+
+const FormReg = ({reg, setreg}) => {
+
+
+    const handleChange = (e) =>{
+
+        setreg({
+            ...reg,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    let {Concepto, Monto, Fecha, Tipo } = reg
+
+    const handleSubmit = () =>{
+
+        Monto = parseInt(Monto, 10)
+
+     if(Concepto === '' || Monto <= 0 ||Fecha === '' || Tipo === ''){
+
+        alert('Todos los campos son obligatorios')
+
+        return
+     }
+
+        //Consulta
+        const requestInit = {
+            method:'post',
+            headers:{'Content-Type': 'application/json'},
+            body: JSON.stringify(reg)
+        }
+        fetch('http://localhost:9000/api', requestInit)
+            .then(res => res.json())
+            .then(res => console.log(res))
+
+
+            //Reinicio State del libro
+            setreg({
+                Concepto: '',      
+                Monto: 0,
+                Fecha:'',
+                Tipo:''
+            })
+
+
+    }
+
+
     return ( 
-        <div>
+       
+       <div>
 
             <h1 style={{textAlign: 'center'}} className ='bg-dark text-warning' >Formulario de Registro</h1>
 
-          <form className="form-group">
-            <div>
+          <form 
+                className="form-group"
+                onSubmit={handleSubmit}
+                >
+            
+            <div className='mb-3'>
 
-              <label> Concepto </label>
+              <label htmlFor='Concepto' className='form-label'> Concepto </label>
               <input
+                name='Concepto'
+                id='Concepto'
                 type="text"
-                className="form-control mb-3"
-                
+                className="form-control"
+                onChange={handleChange}
               />
 
             </div>
 
-            <div>
+            <div className='mb-3'>
 
-              <label> Monto </label>
+              <label  htmlFor='Monto' className='form-label'> Monto </label>
               <input
+                name='Monto'
+                id='Monto'
                 type="text"
-                className="form-control mb-3"
-                placeholder="Monto"
+                className="form-control"
+                onChange={handleChange}
                 
                 />
             </div>
 
-            <div>
-              <label> Fecha </label>
+            <div className='mb-3'>
+              <label htmlFor='Fecha' className='form-label'> Fecha </label>
               <input
+                name='Fecha'
+                id='Fecha'
                 type="date"
-                className="form-control mb-3"
-                
+                className="form-control"
+                onChange={handleChange}
               />
 
             </div>
 
-            <div>
-              
-              <label className="ml-1 p-3"> Tipo </label>
+            <div className='mb-3'>
 
-              <select className="form-select" >
-                <option selected></option>
-                <option value="Ingreso">Ingreso</option>
-                <option value="Egreso">Egreso</option>
-              </select>
-            </div>
+            <label  htmlFor='Tipo' className='form-label'> Tipo </label>
+                    <input
+                    name='Tipo'
+                    id='Tipo'
+                    type="text"
+                    className="form-control"
+                    onChange={handleChange}
+                    
+                    />
+</div>
 
-
-            <input
-              
-              type="submit"
-              value="Registro de operacion"
-              className="btn btn-info btn-block" />
+            <button
+            className='btn btn-primary'
+            
+            >Registrar</button>
+            
           </form>
 
 
