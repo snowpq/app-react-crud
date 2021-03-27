@@ -44,7 +44,7 @@ const handleDelete= id =>{
         <Fragment>
 
             <div className='container'>
-                <h1 style={{ textAlign: 'center' }} className='bg-success' >Ingresos</h1>
+                <h1 style={{ textAlign: 'center' }} className='p-2 bg-success' >Ingresos</h1>
                 <table className="table table-success table-striped">
                     <thead>
                         <tr>
@@ -60,7 +60,7 @@ const handleDelete= id =>{
 
                     <tbody>
 
-                        {registro.map(registro => (
+                        {registro.map(registro => ( registro.Tipo === "Ingreso" ? (
 
 
 
@@ -83,7 +83,7 @@ const handleDelete= id =>{
                                 </td>
                                 
 
-                            </tr>
+                            </tr> ) : (<td></td>)
 
                         ))}
 
@@ -97,7 +97,7 @@ const handleDelete= id =>{
 
                 </div>
 
-                <h1 style={{ textAlign: 'center' }} className='bg-danger' >Egresos</h1>
+                <h1 style={{ textAlign: 'center' }} className='p-2 bg-danger' >Egresos</h1>
                 <table className="table table-danger table-striped">
                     <thead>
                         <tr>
@@ -113,29 +113,29 @@ const handleDelete= id =>{
 
                     <tbody>
 
-                        {registro.map(registro => (
+                        {registro.map(registro => ( registro.Tipo === "Egreso" ? (
 
 
 
                             <tr key={registro.idRegistro}>
 
-                                <td>{registro.idRegistro}</td>
-                                <td>{registro.Concepto}</td>
-                                <td>{registro.Monto}</td>
-                                <td>{registro.Fecha}</td>
+                            <td>{registro.idRegistro}</td>
+                            <td>{registro.Concepto}</td>
+                            <td>{registro.Monto}</td>
+                            <td>{registro.Fecha}</td>
 
-                                <td className="center">
-                                    
-                                    <div className='mb-3'>
-                                        
-                                        <button className="btn btn-warning ">Edit</button>
-                                        <button className="btn btn-danger ">Delete</button>
 
-                                    </div>
-                                    
-                                </td>
+                            <td>
+                                <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+                                
+                                <button onClick={()=> handleSelect(registro.idRegistro)} type="button" className="btn btn-success">Select</button>
+                                <button onClick={()=> handleUpdate(registro.idRegistro)} type="button" className="btn btn-warning">Update</button>
+                                <button onClick={()=> handleDelete(registro.idRegistro)} type="button" className="btn btn-danger">Delete</button>
+                                
+                                </div>
+                            </td>
 
-                            </tr>
+                            </tr> ) : (<td></td>)
 
                         ))}
 

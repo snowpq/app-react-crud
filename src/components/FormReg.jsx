@@ -51,7 +51,7 @@ const FormReg = ({reg, setreg}) => {
        
        <div>
 
-            <h1 style={{textAlign: 'center'}} className ='p-2 bg-dark text-warning' >Formulario de Registro</h1>
+            <h1 style={{textAlign: 'center'}} className ='p-2 bg-dark text-warning' >Registro de Operaciones</h1>
 
           <form 
                 className="form-group"

@@ -2,7 +2,17 @@
 import { useEffect, useState } from 'react'
 import FormReg from "./components/FormReg";
 import ListForm from './components/ListForm';
-//import Balance from './components/Balance';
+
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Balance from './components/Balance';
+
 
 
 
@@ -35,17 +45,51 @@ function App() {
   }, [listUpdated])
 
 
+  
   return (
     <div className="container">
 
-      {/* <h1 style={{textAlign: 'center'}}>Este es el Home</h1>
+    
       
-      <Balance></Balance>
-       */}
+  
+      <Router>
+      <div className='btn-group'>
 
-      <FormReg reg={reg} setreg={setreg}></FormReg>
+    <Link to='/' className='btn btn-dark'>
+          Home
+    </Link>
 
-      <ListForm registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListForm>
+    <Link to='/reg' className='btn btn-success'>
+          Registros
+    </Link>
+
+    </div>
+      <Switch>
+
+        <Route path='/' exact>
+
+        <Balance></Balance>
+
+        <ListForm registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListForm>
+
+        </Route>
+
+        <Route path='/reg'>
+      
+              <FormReg reg={reg} setreg={setreg}></FormReg>
+
+              <ListForm registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListForm>
+                  
+        </Route>
+      
+      
+      </Switch>
+      
+      
+      
+
+      </Router>
+      
 
 
 
