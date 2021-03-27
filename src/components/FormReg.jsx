@@ -1,6 +1,6 @@
 
 
-const FormReg = ({reg, setreg}) => {
+const FormReg = ({reg, setreg, registro}) => {
 
 
     const handleChange = (e) =>{

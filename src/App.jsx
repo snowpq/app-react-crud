@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react'
 import FormReg from "./components/FormReg";
 import ListForm from './components/ListForm';
+import ListFormMain from './components/ListFormMain'
+
 
 
 
@@ -68,9 +70,9 @@ function App() {
 
         <Route path='/' exact>
 
-        <Balance></Balance>
+        <Balance registro={registro}></Balance>
 
-        <ListForm registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListForm>
+        <ListFormMain registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListFormMain>
 
         </Route>
 

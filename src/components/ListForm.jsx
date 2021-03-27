@@ -9,7 +9,9 @@ const ListForm = ({ reg, registro, setlistUpdated }) => {
         
     }
 
+    let registroIng = registro.filter(registro => registro.Tipo === "Ingreso" )
 
+    let registroEgr = registro.filter(registro => registro.Tipo === "Egreso" )
 
     const handleUpdate = id => {
 
@@ -60,7 +62,7 @@ const handleDelete= id =>{
 
                     <tbody>
 
-                        {registro.map(registro => ( registro.Tipo === "Ingreso" ? (
+                        {registroIng.map(registro => ( 
 
 
 
@@ -83,7 +85,7 @@ const handleDelete= id =>{
                                 </td>
                                 
 
-                            </tr> ) : (<td></td>)
+                            </tr> 
 
                         ))}
 
@@ -113,7 +115,7 @@ const handleDelete= id =>{
 
                     <tbody>
 
-                        {registro.map(registro => ( registro.Tipo === "Egreso" ? (
+                        {registroEgr.map(registro => ( 
 
 
 
@@ -135,7 +137,7 @@ const handleDelete= id =>{
                                 </div>
                             </td>
 
-                            </tr> ) : (<td></td>)
+                            </tr> 
 
                         ))}
 
