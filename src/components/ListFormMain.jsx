@@ -1,11 +1,31 @@
 import { Fragment } from 'react'
 
-
-
 const ListForm = ({registro}) => {
 
 
 
+
+const ultimosDiez = registro => {
+
+  
+    let dif = registro.length - 10
+      
+        
+    let a = dif + init
+    let b = dif + fin
+    let registroMod = registro.slice(a,b)
+
+return registroMod
+}
+
+
+let init = 0
+let fin = 10
+let registroMod = []
+registro.length < 10 ? (registroMod = registro.slice(init,fin)):(registroMod = ultimosDiez(registro)) 
+
+
+       
     return (
         <Fragment>
 
@@ -23,7 +43,7 @@ const ListForm = ({registro}) => {
                     <tbody>
                           
                            {                                    
-                                    registro.map(registro => ( 
+                                    registroMod.map(registro => ( 
                                                     
                                                     <tr key={registro.idRegistro}>
                                                             <td>{registro.Concepto}</td>

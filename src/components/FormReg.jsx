@@ -1,6 +1,6 @@
 
 
-const FormReg = ({reg, setreg, registro}) => {
+const FormReg = ({reg, setreg,}) => {
 
 
     const handleChange = (e) =>{
@@ -51,7 +51,7 @@ const FormReg = ({reg, setreg, registro}) => {
        
        <div>
 
-            <h1 style={{textAlign: 'center'}} className ='p-2 bg-dark text-warning' >Registro de Operaciones</h1>
+            <h1 style={{textAlign: 'center'}} className ='p-2 bg-info text-white' >Registro de Operaciones</h1>
 
           <form 
                 className="form-group"

@@ -26,8 +26,8 @@ let balanz = sumaIng - sumaEgr
 
     return (  
         <> 
-
-        <h1 style={{textAlign: 'center'}} className='bg-dark color-warning' >Blance actual {balanz}</h1>
+        <h2 style={{textAlign: 'center'}} className ='p-2 bg-dark text-warning' >Blance actual</h2>
+        <h1 style={{textAlign: 'center'}} className ='p-2 bg-dark text-warning' >{balanz}</h1>
         
         
         </>

@@ -3,12 +3,6 @@ import { Fragment } from 'react'
 const ListForm = ({ reg, registro, setlistUpdated }) => {
 
 
-    const handleSelect = id => {
-
-        //Desarrollar funcion para que pinte los datos del registro en el formulario
-        
-    }
-
     let registroIng = registro.filter(registro => registro.Tipo === "Ingreso" )
 
     let registroEgr = registro.filter(registro => registro.Tipo === "Egreso" )
@@ -77,7 +71,7 @@ const handleDelete= id =>{
                                 <td>
                                     <div className="btn-group" role="group" aria-label="Basic mixed styles example">
                                     
-                                    <button onClick={()=> handleSelect(registro.idRegistro)} type="button" className="btn btn-success">Select</button>
+                                    
                                     <button onClick={()=> handleUpdate(registro.idRegistro)} type="button" className="btn btn-warning">Update</button>
                                     <button onClick={()=> handleDelete(registro.idRegistro)} type="button" className="btn btn-danger">Delete</button>
                                     
@@ -130,7 +124,7 @@ const handleDelete= id =>{
                             <td>
                                 <div className="btn-group" role="group" aria-label="Basic mixed styles example">
                                 
-                                <button onClick={()=> handleSelect(registro.idRegistro)} type="button" className="btn btn-success">Select</button>
+                                
                                 <button onClick={()=> handleUpdate(registro.idRegistro)} type="button" className="btn btn-warning">Update</button>
                                 <button onClick={()=> handleDelete(registro.idRegistro)} type="button" className="btn btn-danger">Delete</button>
                                 

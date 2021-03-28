@@ -3,10 +3,6 @@ import { useEffect, useState } from 'react'
 import FormReg from "./components/FormReg";
 import ListForm from './components/ListForm';
 import ListFormMain from './components/ListFormMain'
-
-
-
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -50,53 +46,42 @@ function App() {
   
   return (
     <div className="container">
-
-    
-      
-  
+ 
       <Router>
-      <div className='btn-group'>
+        <div className='btn-group'>
 
-    <Link to='/' className='btn btn-dark'>
-          Home
-    </Link>
+            <Link to='/' className='btn btn-dark'>
+                  Home
+            </Link>
 
-    <Link to='/reg' className='btn btn-success'>
-          Registros
-    </Link>
+            <Link to='/reg' className='btn btn-info'>
+                  Registros
+            </Link>
 
-    </div>
+      </div>
       <Switch>
 
-        <Route path='/' exact>
+            <Route path='/' exact>
 
-        <Balance registro={registro}></Balance>
+                  <Balance registro={registro}></Balance>
 
-        <ListFormMain registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListFormMain>
+                  <ListFormMain registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListFormMain>
 
-        </Route>
+            </Route>
 
-        <Route path='/reg'>
-      
-              <FormReg reg={reg} setreg={setreg}></FormReg>
+            <Route path='/reg'>
+          
+                  <FormReg reg={reg} setreg={setreg}></FormReg>
 
-              <ListForm registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListForm>
-                  
-        </Route>
+                  <ListForm registro={registro} setlistUpdated={setlistUpdated} reg={reg}></ListForm>
+                      
+            </Route>
       
       
       </Switch>
       
-      
-      
-
       </Router>
       
-
-
-
-
-
     </div>
   );
 }
