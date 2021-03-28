@@ -16,6 +16,7 @@ const FormReg = ({reg, setreg,}) => {
     const handleSubmit = () =>{
 
         Monto = parseInt(Monto, 10)
+        
 
      if(Concepto === '' || Monto <= 0 ||Fecha === '' || Tipo === ''){
 

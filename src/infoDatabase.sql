@@ -1,0 +1,12 @@
+CREATE DATABASE challegedb;
+
+USE challegedb;
+
+CREATE TABLE registro(
+Concepto VARCHAR(45) NOT NULL AUTO_INCREMENT,
+Fecha DATE NOT NULL,
+idRegistro INT NOT NULL,
+Monto INT NOT NULL,
+Tipo VARCHAR(45) 
+);
+
