@@ -7,6 +7,9 @@ const ListForm = ({ reg, registro, setlistUpdated }) => {
 
     let registroEgr = registro.filter(registro => registro.Tipo === "Egreso" )
 
+
+    
+
     const handleUpdate = id => {
 
     const requestInit = {

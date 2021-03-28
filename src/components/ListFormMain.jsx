@@ -2,15 +2,15 @@ import { Fragment } from 'react'
 
 const ListForm = ({registro}) => {
 
-
+let init = 0
+let fin = 10
+let registroMod = []
 
 
 const ultimosDiez = registro => {
 
   
-    let dif = registro.length - 10
-      
-        
+    let dif = registro.length - 10       
     let a = dif + init
     let b = dif + fin
     let registroMod = registro.slice(a,b)
@@ -18,10 +18,6 @@ const ultimosDiez = registro => {
 return registroMod
 }
 
-
-let init = 0
-let fin = 10
-let registroMod = []
 registro.length < 10 ? (registroMod = registro.slice(init,fin)):(registroMod = ultimosDiez(registro)) 
 
 
